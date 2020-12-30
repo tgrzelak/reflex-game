@@ -1,0 +1,41 @@
+<header class="top">
+  <form *ngIf="!config.isBoardGame && !config.isShowResults" class="left-side" [formGroup]="level">
+    <mat-button-toggle-group formControlName="difficultyLevel" aria-label="Font Style" style="margin-left: 30px;">
+      <mat-button-toggle value="easy">{{ 'LEVELS.EASY' | translate}}</mat-button-toggle>
+      <mat-button-toggle value="medium">{{ 'LEVELS.MEDIUM' | translate}}</mat-button-toggle>
+      <mat-button-toggle value="hard">{{ 'LEVELS.HARD' | translate}}</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <mat-slide-toggle formControlName="suddenDeath" color="primary"
+      style="margin-left: 30px;"
+      [matTooltip]="'SUDDEN_DEATH_TOOLTIP_TEXT' | translate">
+      {{'SUDDEN_DEATH' | translate}}
+    </mat-slide-toggle>
+    <button (click)="showResults()" style="margin-left: 30px;">{{'SHOW_SCOREBOARD' | translate}}</button>
+  </form>
+
+  <app-language-switch class="right-side" *ngIf="!config.isBoardGame"></app-language-switch>
+</header>
+
+
+<main class="menu center" *ngIf="!config.isBoardGame && !config.isShowResults">
+  <div class="items">
+    <div *ngIf="config.newRecord">{{'NEW_RECORD' | translate}}</div>
+    <div *ngIf="config.isGameOver">PRZEGRAŁEŚ ! NIE KLIKNĄŁEŚ W KAFELEK</div>
+    <div *ngIf="config.isGameFinished && !config.isGameOver" class="yourResult center">
+      <div class="yourResultText">{{'YOUR_SCORE' | translate}} {{config.finalResult | date: 's \'Sekunda\' SSS
+        \'Milisekund\''}}.
+      </div>
+
+      <mat-form-field *ngIf="!config.isNameAdded" class="example-full-width">
+        <mat-label>{{'PUT_YOUR_NAME' | translate}}</mat-label>
+        <input matInput placeholder="Np. Maguś" [formControl]="firstName" (keydown)="onKeydown($event)">
+      </mat-form-field>
+
+    </div>
+    <button *ngIf="!config.isGameFinished" class="startBtn" (click)="startGame()">{{'CLICK_TO_START' |
+      translate}}</button>
+    <button *ngIf="config.isGameFinished" class="resetBtn" (click)="toggleStartBtn()" [disabled]="!firstName.valid && !config.isGameOver">{{'PLAY_AGAIN' |
+      translate}}</button>
+  </div>
+</main>

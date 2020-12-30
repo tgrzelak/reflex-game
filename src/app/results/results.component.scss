@@ -1,0 +1,25 @@
+table {
+  width: 100%;
+}
+
+.activeRow {
+  background-color: lightblue;
+}
+
+.backBtn, .restartBtn {
+  margin: 20px 10px;
+  width: 200px;
+  height: 50px;
+  background-color: aquamarine;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background-color: darken($color: aquamarine, $amount: 20);
+  }
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: calc(100% - 10px);
+  margin-left: 10px;
+}

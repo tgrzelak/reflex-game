@@ -1,0 +1,54 @@
+<main class="table" [hidden]="!config.isShowResults">
+  <mat-form-field>
+    <mat-label>{{'FILTER' | translate}}</mat-label>
+    <input matInput #input (keyup)="applyFilter($event)" [placeholder]="'FILTER_PLACEHOLDER' | translate">
+  </mat-form-field>
+
+  <table mat-table [dataSource]="config.dataSource" matSort class="mat-elevation-z8">
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'POSITION' | translate}} </th>
+      <td [ngClass]="{'activeRow' : config.result === element.result}" mat-cell *matCellDef="let element">
+        {{element.position}} </td>
+    </ng-container>
+
+    <!-- Time Column -->
+    <ng-container matColumnDef="result">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'TIME' | translate}} </th>
+      <td [ngClass]="{'activeRow' : config.result === element.result}" mat-cell *matCellDef="let element">
+        {{element.result | date: 's \'Sekunda\' SSS \'Milisekund\''}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'NAME' | translate}} </th>
+      <td [ngClass]="{'activeRow' : config.result === element.result}" mat-cell *matCellDef="let element;">
+        {{element.name}}
+      </td>
+    </ng-container>
+
+    <!-- Difficulty Level Column -->
+    <ng-container matColumnDef="difficultyLevel">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'LEVEL' | translate}}</th>
+      <td [ngClass]="{'activeRow' : config.result === element.result}" mat-cell *matCellDef="let element;"
+        [ngStyle]="{'color': setLevelTextColor(element.difficultyLevel)}"> {{element.difficultyLevel}}
+      </td>
+    </ng-container>
+
+    <!-- Sudden Death Column -->
+    <ng-container matColumnDef="suddenDeath">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'SUDDEN_DEATH' | translate}} </th>
+      <td [ngClass]="{'activeRow' : config.result === element.result}" mat-cell *matCellDef="let element;">
+        {{element.suddenDeath | convertBoolean: currentLang}}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"></mat-paginator>
+
+  <button class="restartBtn" (click)="openDialog()">{{'RESET_RESULTS' | translate}}</button>
+  <button class="backBtn" (click)="onBack()">{{'BACK' | translate}}</button>
+</main>

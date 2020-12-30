@@ -1,0 +1,17 @@
+.top {
+  display: flex;
+}
+
+.left-side {
+  flex: 0 1 50%;
+  display: flex;
+  max-width: 50%;
+  justify-content: flex-start;
+}
+
+.right-side {
+  flex: 0 1 50%;
+  display: flex;
+  max-width: 50%;
+  justify-content: flex-end;
+}

@@ -1,0 +1,31 @@
+{
+  "PAGE_TITLES": {
+    "REFLEX_GAME": "Gra na refleks",
+    "RESULTS": "Wyniki",
+    "GAME": "Gra"
+  },
+  "LEVELS": {
+    "EASY": "Łatwy",
+    "MEDIUM": "Średni",
+    "HARD": "Trudny"
+  },
+  "SHOW_SCOREBOARD": "Tabela wyników",
+  "SUDDEN_DEATH": "Nagła śmierć",
+  "SUDDEN_DEATH_TOOLTIP_TEXT": "Kliknięcie poza obręb kafelka kończy grę",
+  "CLICK_HERE": "KLIKNIJ TUTAJ !!!",
+  "NEW_RECORD": "BRAWO NOWY REKORD !!!",
+  "YOUR_SCORE": "Twój wynik to",
+  "PUT_YOUR_NAME": "Podaj swoje imię",
+  "CLICK_TO_START": "Kliknij aby rozpocząć grę",
+  "PLAY_AGAIN": "Zagraj ponownie",
+  "POSITION": "Miejsce",
+  "TIME": "Czas",
+  "NAME": "Imię",
+  "LEVEL": "Poziom trudności",
+  "RESET_RESULTS": "Wyzeruj wyniki",
+  "BACK": "Cofnij",
+  "FILTER": "Filtruj",
+  "FILTER_PLACEHOLDER": "Np. Łatwy, Adam ...",
+  "SECOND": "Sekund",
+  "MILLISECOND": "Milisekund"
+}

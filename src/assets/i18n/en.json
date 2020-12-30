@@ -1,0 +1,31 @@
+{
+  "PAGE_TITLES": {
+    "REFLEX_GAME": "Reflex Game",
+    "RESULTS": "Results",
+    "GAME": "Game"
+  },
+  "LEVELS": {
+    "EASY": "Easy",
+    "MEDIUM": "Medium",
+    "HARD": "Hard"
+  },
+  "SHOW_SCOREBOARD": "Scoreboard",
+  "SUDDEN_DEATH": "Sudden Death",
+  "SUDDEN_DEATH_TOOLTIP_TEXT": "Clicking outside the tile ends the game",
+  "CLICK_HERE": "CLICK HERE !!!",
+  "NEW_RECORD": "NEW RECORD CONGRATULATIONS !!!",
+  "YOUR_SCORE": "Your score is",
+  "PUT_YOUR_NAME": "Put your name",
+  "CLICK_TO_START": "Click here to start game",
+  "PLAY_AGAIN": "Play again",
+  "POSITION": "Position",
+  "TIME": "Time",
+  "NAME": "Name",
+  "LEVEL": "Level",
+  "RESET_RESULTS": "Reset results",
+  "BACK": "Back",
+  "FILTER": "Filter",
+  "FILTER_PLACEHOLDER": "Np. Easy, Adam ...",
+  "SECOND": "Second",
+  "MILLISECOND": "Millisecond"
+}

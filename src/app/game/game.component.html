@@ -1,0 +1,10 @@
+<main class="game" *ngIf="isGame">
+  <header class="header center">{{time | date: 'm s \'Sekund\' SSS \'Milisekund\''}}</header>
+  <div class="grid">
+    <div *ngFor="let tile of tiles; let i = index"
+      [style.visibility]="activeTileIndex !== i + 1 ? 'hidden' : 'visible'"
+      [ngStyle]="{'margin.px': marginByLvl}"
+      appClickOutside (clickOutside)="activeTileIndex === i + 1 && isSuddenDeath ? onClickedOutside($event) : null"
+      class="tile" (click)="onTileClick()">{{'CLICK_HERE' | translate}}</div>
+  </div>
+</main>
